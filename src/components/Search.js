@@ -4,13 +4,19 @@ class Search extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // TODO Call search
+        // // TODO Call search
+        // console.log('lesgooo')
+        // let subject = this.subject.value;
+        // let path = `search/${subject}`;
+        // this.props.history.push(path);
+
+        //props.handleSearch(this.subject.value);
     }
 
     render() {
         return (
             <form onSubmit={this.handleSubmit} className="search-form">
-                <input type="search" name="search" placeholder="Search" required/>
+                <input type="search" name="search" placeholder="Search Pictures" ref={ (input) => this.subject = input}/>
                 <button type="submit" className="search-button">
                     <svg fill="#fff" height="24" viewBox="0 0 23 23" width="24" xmlns="http://www.w3.org/2000/svg">
                         <path
