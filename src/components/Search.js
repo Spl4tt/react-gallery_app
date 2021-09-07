@@ -5,8 +5,9 @@ class Search extends Component {
     handleSubmit(e) {
         e.preventDefault();
         // // TODO Call search
-        // console.log('lesgooo')
-        // let subject = this.subject.value;
+
+        let subject = this.subject.value;
+        console.log(subject);
         // let path = `search/${subject}`;
         // this.props.history.push(path);
 
