@@ -13,16 +13,31 @@ console.log(apiKey);
 
 class App extends Component {
 
-    handleSearch(searchString) {
-        console.log(searchString);
+    handleSearch = (searchString) => {
+        this.setState({
+            searchString: searchString
+        });
+
+        this.search(searchString);
+    }
+
+    search = (searchString) => {
+        const searchPath = '/search/'+searchString;
+        console.log('searchPath: ' + searchPath);
+
+        //this.props.history.push(searchPath); // redirect
     }
 
     render() {
         return (
             <BrowserRouter>
                 <div className="App">
-                    <Search/>
-                    <MainNav/>
+                    <Search
+                        handleSearch={this.handleSearch}
+                    />
+                    <MainNav
+                        handleSearch={this.handleSearch}
+                    />
                     <PhotoContainer/>
                 </div>
             </BrowserRouter>
