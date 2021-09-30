@@ -4,7 +4,15 @@ class Search extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.handleSearch(e.target.search.value);
+        const searchString = e.target.search.value;
+
+        if(searchString) {
+            this.props.handleSearch(e.target.search.value);
+            const searchPath = '/search/'+searchString;
+
+            // TODO Solution for this?
+            //this.props.history.push(searchPath); // redirect
+        }
     }
 
     render() {

@@ -1,10 +1,12 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import config from "./config";
-import {BrowserRouter, Link, NavLink, Route} from "react-router-dom";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Search from "./components/Search";
 import MainNav from "./components/MainNav";
 import PhotoContainer from "./components/PhotoContainer";
+import Home from "./components/Home";
+import GaggiPage from "./components/GaggiPage";
 import {Component} from "react";
 
 const apiKey = config;
@@ -35,10 +37,10 @@ class App extends Component {
                     <Search
                         handleSearch={this.handleSearch}
                     />
-                    <MainNav
-                        handleSearch={this.handleSearch}
-                    />
-                    <PhotoContainer/>
+                    <MainNav />
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/gaggi" component={GaggiPage}/>
+                    <Route path="/search/:topic" component={PhotoContainer}/>
                 </div>
             </BrowserRouter>
         );

@@ -1,6 +1,8 @@
-const PhotoContainer = (props) => {
+const PhotoContainer = ({match}) => {
 
-    if(props.searchString === 'cats') {
+    let topic = match.params.topic;
+
+    if(topic === 'cats') {
         return (
             <div>
                 <ul>
@@ -11,7 +13,7 @@ const PhotoContainer = (props) => {
             </div>
         )
     }
-    else if (props.searchString === 'dogs') {
+    else if (topic === 'dogs') {
         return (
             <div>
                 <ul>
@@ -22,7 +24,7 @@ const PhotoContainer = (props) => {
             </div>
         )
     }
-    else if (props.searchString === 'computers') {
+    else if (topic === 'computers') {
         return (
             <div>
                 <ul>
